@@ -23,3 +23,7 @@ final quizDurationProvider = StateProvider<int>((ref) {
 final dataLengthProvider = StateProvider<int>((ref) {
   return 5;
 });
+
+final marksCountProvider = StateProvider<int>((ref) {
+  return 0;
+});
