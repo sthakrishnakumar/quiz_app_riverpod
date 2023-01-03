@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app/quiz/presentation/views/quiz_page.dart';
+
+import 'features/quiz_stateful/presentation/quiz_page1.dart';
 
 void main() {
   runApp(
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const QuizPage(),
+      home: const QuizPage1(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:quiz_app/quiz/domain/entities/quiz.dart';
+import 'package:quiz_app/features/quiz_stateprovider/domain/entities/quiz.dart';
 
 class QuizModel extends Quiz {
   QuizModel({

@@ -14,7 +14,7 @@ class ApiClient {
   }) async {
     Dio dio = Dio(
       BaseOptions(
-        baseUrl: ApiConst.baseUrl,
+        baseUrl: ApiConst.myUrl,
         headers: {
           'Content-Type': 'application/json',
           "Accept": 'application/json',

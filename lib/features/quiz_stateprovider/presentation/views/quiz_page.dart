@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/core/commons.dart';
 import 'package:quiz_app/core/providers.dart';
-import 'package:quiz_app/quiz/presentation/logic/quiz_controller.dart';
-import 'package:quiz_app/quiz/presentation/views/quiz_result_page.dart';
+import 'package:quiz_app/features/quiz_stateprovider/presentation/logic/quiz_controller.dart';
+import 'package:quiz_app/features/quiz_stateprovider/presentation/views/quiz_result_page.dart';
 
 class QuizPage extends ConsumerStatefulWidget {
   const QuizPage({super.key});
@@ -79,7 +79,7 @@ class _QuizPageState extends ConsumerState<QuizPage> {
       body: AsyncValueWidget(
         value: ref.watch(quizControllerProvider),
         data: (data) {
-          quizLength = data.length - 1;
+          // quizLength = data.length - 1;
           final quizes = data[quizIndex];
           if (!isTapped) {
             final List<String> answers = [

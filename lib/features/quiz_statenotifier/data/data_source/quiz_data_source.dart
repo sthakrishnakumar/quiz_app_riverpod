@@ -3,8 +3,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/core/api_client.dart';
 import 'package:quiz_app/core/api_const.dart';
-import 'package:quiz_app/quiz/data/model/quiz_model.dart';
-import 'package:quiz_app/quiz/domain/entities/quiz.dart';
+import 'package:quiz_app/features/quiz_stateprovider/data/model/quiz_model.dart';
+import 'package:quiz_app/features/quiz_stateprovider/domain/entities/quiz.dart';
 
 abstract class QuizDataSource {
   Future<List<Quiz>> getQuiz();
