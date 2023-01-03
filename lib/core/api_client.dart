@@ -27,7 +27,7 @@ class ApiClient {
           ? await dio.get(path)
           : await dio.post(path,
               data: isFormData ? FormData.fromMap(data) : data);
-      log('api okay ${result.data}');
+      // log('api okay ${result.data}');
 
       return result.data;
     } on DioError catch (e) {

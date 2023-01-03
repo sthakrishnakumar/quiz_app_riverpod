@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,4 +23,22 @@ class AsyncValueWidget<T> extends ConsumerWidget {
       loading: () => loading,
     );
   }
+}
+
+pushReplacement(BuildContext context, Widget widget) {
+  Navigator.pushReplacement(
+    context,
+    CupertinoPageRoute(
+      builder: (context) => widget,
+    ),
+  );
+}
+
+navigation(BuildContext context, Widget widget) {
+  Navigator.push(
+    context,
+    CupertinoPageRoute(
+      builder: (context) => widget,
+    ),
+  );
 }

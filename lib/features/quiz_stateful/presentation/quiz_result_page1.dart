@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/features/quiz_stateful/presentation/quiz_page1.dart';
+
+import '../../../core/commons.dart';
 
 class QuizResultPage1 extends StatelessWidget {
   QuizResultPage1({super.key, required this.total, required this.score});
@@ -12,6 +15,12 @@ class QuizResultPage1 extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Quiz Result '),
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            pushReplacement(context, const QuizPage1());
+          },
+          icon: const Icon(Icons.arrow_back),
+        ),
       ),
       body: Center(
         child: Column(

@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/features/quiz_stateful/data/api_services.dart';
 import 'package:quiz_app/features/quiz_stateful/presentation/quiz_result_page1.dart';
 import 'package:quiz_app/features/quiz_stateprovider/domain/entities/quiz.dart';
+
+import '../../../core/commons.dart';
 
 class QuizPage1 extends StatefulWidget {
   const QuizPage1({super.key});
@@ -112,13 +113,11 @@ class _QuizPage1State extends State<QuizPage1> {
                             isIgnored = false;
                             isTapped = false;
                           } else {
-                            Navigator.push(
+                            pushReplacement(
                               context,
-                              CupertinoPageRoute(
-                                builder: (context) => QuizResultPage1(
-                                    total: snapshot.requireData.length,
-                                    score: marksCount),
-                              ),
+                              QuizResultPage1(
+                                  total: snapshot.requireData.length,
+                                  score: marksCount),
                             );
                           }
                         } else {

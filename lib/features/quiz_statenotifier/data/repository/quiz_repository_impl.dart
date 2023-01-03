@@ -7,13 +7,14 @@ import 'package:quiz_app/features/quiz_stateprovider/domain/entities/quiz.dart';
 import '../../domain/repository/quiz_repository.dart';
 import '../data_source/quiz_data_source.dart';
 
-final quizRepoProvider = Provider<QuizRepository>((ref) {
-  return QuizRepositoryImpl(dataSource: ref.watch(quizDataSourceProvider));
+final quizStateRepoProvider = Provider<QuizStateRepository>((ref) {
+  return QuizStateRepositoryImpl(
+      dataSource: ref.watch(quizStateDataSourceProvider));
 });
 
-class QuizRepositoryImpl extends QuizRepository {
+class QuizStateRepositoryImpl extends QuizStateRepository {
   QuizDataSource dataSource;
-  QuizRepositoryImpl({
+  QuizStateRepositoryImpl({
     required this.dataSource,
   });
 

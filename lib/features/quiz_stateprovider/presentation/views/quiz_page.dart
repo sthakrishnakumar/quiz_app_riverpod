@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app/core/commons.dart';
@@ -169,13 +168,8 @@ class _QuizPageState extends ConsumerState<QuizPage> {
                           ref.read(isIgnoredProvider.notifier).state = false;
                           ref.read(isTappedProvider.notifier).state = false;
                         } else {
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              builder: (context) =>
-                                  QuizResultPage(total: data.length),
-                            ),
-                          );
+                          pushReplacement(
+                              context, QuizResultPage(total: data.length));
                         }
                       } else {
                         ScaffoldMessenger.of(context).clearSnackBars();
