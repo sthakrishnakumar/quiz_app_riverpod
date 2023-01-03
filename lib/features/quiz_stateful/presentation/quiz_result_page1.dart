@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:quiz_app/features/quiz_stateful/presentation/quiz_page1.dart';
-
-import '../../../core/commons.dart';
+import '../../../core/export.dart';
 
 class QuizResultPage1 extends StatelessWidget {
   QuizResultPage1({super.key, required this.total, required this.score});

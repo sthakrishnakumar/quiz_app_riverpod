@@ -1,5 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app/features/quiz_statenotifier/data/model/provider_models.dart';
+import '../../../../core/export.dart';
 
 class QuizStateNotifier extends StateNotifier<ProviderModel> {
   QuizStateNotifier() : super(ProviderModel());

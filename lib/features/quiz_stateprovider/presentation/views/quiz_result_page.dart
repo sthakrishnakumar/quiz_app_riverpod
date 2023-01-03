@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app/core/providers.dart';
-import 'package:quiz_app/features/quiz_stateprovider/presentation/views/quiz_page.dart';
-
-import '../../../../core/commons.dart';
+import '../../../../core/export.dart';
 
 class QuizResultPage extends ConsumerWidget {
   QuizResultPage({super.key, required this.total});

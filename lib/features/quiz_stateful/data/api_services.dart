@@ -1,10 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:quiz_app/core/api_client.dart';
-import 'package:quiz_app/core/api_const.dart';
-import 'package:quiz_app/features/quiz_stateprovider/data/model/quiz_model.dart';
-import 'package:quiz_app/features/quiz_stateprovider/domain/entities/quiz.dart';
+
+import '../../../core/export.dart';
 
 class ApiService {
   Future<List<Quiz>> getData() async {

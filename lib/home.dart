@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:quiz_app/core/commons.dart';
-import 'package:quiz_app/features/quiz_stateful/presentation/quiz_page1.dart';
-import 'package:quiz_app/features/quiz_statenotifier/presentation/views/quiz_page2.dart';
-import 'package:quiz_app/features/quiz_stateprovider/presentation/views/quiz_page.dart';
+import 'core/export.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

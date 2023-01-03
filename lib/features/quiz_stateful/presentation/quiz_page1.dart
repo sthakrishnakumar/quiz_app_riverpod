@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:quiz_app/features/quiz_stateful/data/api_services.dart';
-import 'package:quiz_app/features/quiz_stateful/presentation/quiz_result_page1.dart';
-import 'package:quiz_app/features/quiz_stateprovider/domain/entities/quiz.dart';
-
-import '../../../core/commons.dart';
+import '../../../core/export.dart';
 
 class QuizPage1 extends StatefulWidget {
   const QuizPage1({super.key});

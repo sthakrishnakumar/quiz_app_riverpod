@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app/core/commons.dart';
-import 'package:quiz_app/features/quiz_statenotifier/presentation/logic/quiz_state_notifier_controller.dart';
-import 'package:quiz_app/features/quiz_statenotifier/presentation/views/quiz_page2.dart';
-
 // ignore: must_be_immutable
+
+import '../../../../core/export.dart';
+
 class QuizResultPage2 extends ConsumerWidget {
   QuizResultPage2({super.key, required this.total});
   int total;

@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app/core/commons.dart';
-import 'package:quiz_app/core/providers.dart';
-import 'package:quiz_app/features/quiz_stateprovider/presentation/logic/quiz_controller.dart';
-import 'package:quiz_app/features/quiz_stateprovider/presentation/views/quiz_result_page.dart';
+import '../../../../core/export.dart';
 
 class QuizPage extends ConsumerStatefulWidget {
   const QuizPage({super.key});
