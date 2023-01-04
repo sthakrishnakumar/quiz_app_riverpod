@@ -42,3 +42,20 @@ navigation(BuildContext context, Widget widget) {
     ),
   );
 }
+
+floatingSnackbar(BuildContext context, String title,
+    {Color color = Colors.green}) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(title),
+      backgroundColor: color,
+      duration: const Duration(seconds: 1),
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.only(
+        bottom: 40,
+        left: 10,
+        right: 10,
+      ),
+    ),
+  );
+}

@@ -15,9 +15,15 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
   Timer? timer;
 
   @override
-  void didChangeDependencies() {
+  void initState() {
     startTimer();
-    super.didChangeDependencies();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   void startTimer() {
@@ -41,12 +47,14 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
             ),
           );
         }
+        if (!ref.read(quizStateNotifierProvider).isTapped) {
+          ScaffoldMessenger.of(context).clearSnackBars();
+
+          floatingSnackbar(context, 'You Skipped this Question',
+              color: Colors.red.withOpacity(0.5));
+        }
       }
     });
-  }
-
-  void stopTimer() {
-    timer?.cancel();
   }
 
   void resetTimer() {
@@ -56,59 +64,6 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
   }
 
   int quizLength = 2;
-  // @override
-  // void initState() {
-  //   super.initState();
-
-  //   Timer(const Duration(seconds: 5), () {
-  //     startTimer();
-  //   });
-  // }
-
-  // // late int seconds;
-  // void startTimer() {
-  //   CountdownTimer(Duration(seconds: ref.watch(quizDurationProvider)),
-  //           const Duration(seconds: 1))
-  //       .listen((data) {})
-  //     ..onData((data) {
-  //       ref.watch(quizDurationProvider.notifier).state--;
-  //     })
-  //     ..onDone(() {
-  //       if (ref.watch(quizIndexProvider) < quizLength - 1) {
-  //         ref.read(quizStateNotifierProvider.notifier).updateQuizIndex(
-  //             ref.read(quizStateNotifierProvider).quizIndex + 1);
-  //         ref.read(quizStateNotifierProvider.notifier).updateIsIgnored(false);
-  //         ref.read(quizStateNotifierProvider.notifier).updateIsTapped(false);
-  //         if (ref.watch(quizIndexProvider) < quizLength - 1) {
-  //           ref.watch(quizDurationProvider.notifier).state = 5;
-  //           startTimer();
-  //         }
-  //       } else {
-  //         Navigator.push(
-  //             context,
-  //             CupertinoPageRoute(
-  //                 builder: (context) => QuizResultPage2(
-  //                       total: quizLength,
-  //                     )));
-  //       }
-  //       if (!ref.read(quizStateNotifierProvider).isTapped) {
-  //         ScaffoldMessenger.of(context).clearSnackBars();
-  //         ScaffoldMessenger.of(context).showSnackBar(
-  //           SnackBar(
-  //             content: const Text('You Skipped this Question'),
-  //             backgroundColor: Colors.red.withOpacity(0.5),
-  //             duration: const Duration(seconds: 1),
-  //             behavior: SnackBarBehavior.floating,
-  //             margin: const EdgeInsets.only(
-  //               bottom: 40,
-  //               left: 10,
-  //               right: 10,
-  //             ),
-  //           ),
-  //         );
-  //       }
-  //     });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -125,22 +80,6 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
         data: (data) {
           quizLength = data.length - 1;
           final quizes = data[quizIndex];
-          // if (!isTapped) {
-          //   final List<String> answers = [
-          //     ...quizes.incorrectAnswers,
-          //     quizes.correctAnswer
-          //   ];
-          //   final suffle = (answers..shuffle());
-          //   suff = suffle;
-          // }
-
-          // quizes.options;
-          // options = [
-          //   quizes.option1,
-          //   quizes.option2,
-          //   quizes.option3,
-          //   quizes.option4
-          // ];
 
           final options = quizes.options();
 
@@ -203,9 +142,9 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
                                           ? e == quizes.correctAnswer
                                               ? Colors.green
                                               : Colors.red
-                                          : e == quizes.correctAnswer
-                                              ? Colors.green
-                                              : Colors.white
+                                          // : e == quizes.correctAnswer
+                                          //     ? Colors.green
+                                          : Colors.white
                                       : Colors.white,
                                 ),
                                 child: Text(
@@ -243,7 +182,6 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
                               .updateIsTapped(false);
                           resetTimer();
                         } else {
-                          stopTimer();
                           pushReplacement(
                             context,
                             QuizResultPage2(
