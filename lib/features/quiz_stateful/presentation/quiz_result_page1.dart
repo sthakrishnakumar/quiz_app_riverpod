@@ -1,3 +1,5 @@
+import 'package:quiz_app/home.dart';
+
 import '../../../core/export.dart';
 
 class QuizResultPage1 extends StatelessWidget {
@@ -14,7 +16,7 @@ class QuizResultPage1 extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            pushReplacement(context, const QuizPage1());
+            pushReplacement(context, const HomePage());
           },
           icon: const Icon(Icons.arrow_back),
         ),

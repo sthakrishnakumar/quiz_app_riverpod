@@ -1,6 +1,8 @@
+import 'package:quiz_app/features/quiz_statenotifier/domain/entities/quiz.dart';
+
 import '../../../../core/export.dart';
 
-class QuizStateController extends StateNotifier<AsyncValue<List<Quiz>>> {
+class QuizStateController extends StateNotifier<AsyncValue<List<QuizNew>>> {
   QuizStateController(this.quizRepository) : super(const AsyncValue.loading()) {
     getQuiz();
   }
@@ -23,6 +25,7 @@ class QuizStateController extends StateNotifier<AsyncValue<List<Quiz>>> {
 }
 
 final quizStateControllerProvider =
-    StateNotifierProvider<QuizStateController, AsyncValue<List<Quiz>>>((ref) {
+    StateNotifierProvider<QuizStateController, AsyncValue<List<QuizNew>>>(
+        (ref) {
   return QuizStateController(ref.watch(quizStateRepoProvider));
 });

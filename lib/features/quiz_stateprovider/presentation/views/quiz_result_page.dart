@@ -1,3 +1,5 @@
+import 'package:quiz_app/home.dart';
+
 import '../../../../core/export.dart';
 
 class QuizResultPage extends ConsumerWidget {
@@ -22,7 +24,7 @@ class QuizResultPage extends ConsumerWidget {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            pushReplacement(context, const QuizPage());
+            pushReplacement(context, const HomePage());
             refreshProviders(ref);
           },
           icon: const Icon(Icons.arrow_back),

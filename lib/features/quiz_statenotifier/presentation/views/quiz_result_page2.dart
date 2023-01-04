@@ -1,5 +1,7 @@
 // ignore: must_be_immutable
 
+import 'package:quiz_app/home.dart';
+
 import '../../../../core/export.dart';
 
 class QuizResultPage2 extends ConsumerWidget {
@@ -14,7 +16,7 @@ class QuizResultPage2 extends ConsumerWidget {
         title: const Text('Quiz Result Page 2'),
         leading: IconButton(
           onPressed: () {
-            pushReplacement(context, const QuizPage2());
+            pushReplacement(context, const HomePage());
             ref.watch(quizStateNotifierProvider.notifier).resetAll();
           },
           icon: const Icon(Icons.arrow_back),

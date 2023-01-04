@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:quiz_app/features/quiz_statenotifier/domain/entities/quiz.dart';
 
 import '../../../../core/export.dart';
 
@@ -14,7 +15,7 @@ class QuizStateRepositoryImpl extends QuizStateRepository {
   });
 
   @override
-  Future<Either<AppError, List<Quiz>>> getQuiz() async {
+  Future<Either<AppError, List<QuizNew>>> getQuiz() async {
     try {
       final result = await dataSource.getQuiz();
       return Right(result);
