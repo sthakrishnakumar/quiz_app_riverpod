@@ -10,13 +10,16 @@ class QuizPage2 extends ConsumerStatefulWidget {
 }
 
 class _QuizPage2State extends ConsumerState<QuizPage2> {
-  static const maxSeconds = 10;
+  static int maxSeconds = 12;
   int seconds = maxSeconds;
   Timer? timer;
 
   @override
   void initState() {
-    startTimer();
+    Timer(const Duration(seconds: 2), () {
+      startTimer();
+    });
+
     super.initState();
   }
 
@@ -80,6 +83,7 @@ class _QuizPage2State extends ConsumerState<QuizPage2> {
         data: (data) {
           quizLength = data.length - 1;
           final quizes = data[quizIndex];
+          maxSeconds = quizes.time;
 
           final options = quizes.options();
 

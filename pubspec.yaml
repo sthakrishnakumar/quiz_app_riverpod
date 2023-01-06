@@ -41,6 +41,8 @@ dependencies:
   dartz: ^0.10.1
   quiver: ^3.2.1
   http: ^0.13.5
+  animated_text_kit: ^4.2.2
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

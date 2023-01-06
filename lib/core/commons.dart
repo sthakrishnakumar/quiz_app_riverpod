@@ -52,7 +52,7 @@ floatingSnackbar(BuildContext context, String title,
       duration: const Duration(seconds: 1),
       behavior: SnackBarBehavior.floating,
       margin: const EdgeInsets.only(
-        bottom: 40,
+        bottom: 55,
         left: 10,
         right: 10,
       ),

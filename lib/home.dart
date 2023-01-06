@@ -1,4 +1,5 @@
 import 'package:flutter/scheduler.dart';
+import 'package:quiz_app/features/quiz_statenotifier/presentation/views/quiz_page_mero_school.dart';
 
 import 'core/export.dart';
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(elapshed.toString()),
+            Text(elapshed.toString().substring(0, 7)),
             ElevatedButton(
               onPressed: () {
                 navigation(context, const QuizPage1());
@@ -60,6 +61,12 @@ class _HomePageState extends State<HomePage>
                 navigation(context, const QuizPage());
               },
               child: const Text('Quiz State Provider'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                navigation(context, const QuizPageSchool());
+              },
+              child: const Text('Mero School Quiz Animation'),
             ),
           ],
         ),

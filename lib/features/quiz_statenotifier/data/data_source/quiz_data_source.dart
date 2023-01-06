@@ -16,7 +16,7 @@ class QuizStateDataSourceImpl extends QuizStateDataSource {
   });
   @override
   Future<List<QuizNew>> getQuiz() async {
-    List data = await apiClient.request(path: ApiConst.newQuestions);
+    List data = await apiClient.request(path: ApiConst.newAPIQuestions);
     return data.map((e) => QuizNewModel.fromJson(e)).toList();
   }
 }

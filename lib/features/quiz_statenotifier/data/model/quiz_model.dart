@@ -4,6 +4,7 @@ class QuizNewModel extends QuizNew {
   QuizNewModel(
       {required super.question,
       required super.correctAnswer,
+      required super.time,
       required super.option1,
       required super.option2,
       required super.option3,
@@ -13,6 +14,7 @@ class QuizNewModel extends QuizNew {
     return QuizNewModel(
       question: json['question'] ?? "",
       correctAnswer: json['correctAnswer'] ?? "",
+      time: json['time'] ?? 0,
       option1: json['option1'] ?? "",
       option2: json['option2'] ?? "",
       option3: json['option3'] ?? "",

@@ -3,6 +3,7 @@
 class QuizNew {
   String question;
   String correctAnswer;
+  int time;
   String option1;
   String option2;
   String option3;
@@ -10,6 +11,7 @@ class QuizNew {
   QuizNew({
     required this.question,
     required this.correctAnswer,
+    required this.time,
     required this.option1,
     required this.option2,
     required this.option3,
